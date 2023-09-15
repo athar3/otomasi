@@ -2,8 +2,8 @@ import os
 import shutil
 
 # Definisikan path ke folder awal dan folder tujuan
-folder_awal = r'D:\3 projekTA\TA koding\Dataset\jantung\data isys doppler\perc'
-folder_tujuan = r'D:\3 projekTA\TA koding\Dataset\jantung\data isys doppler\percob'
+folder_awal = r'perc'
+folder_tujuan = r'percob'
 
 # Buat folder tujuan jika belum ada
 if not os.path.exists(folder_tujuan):
