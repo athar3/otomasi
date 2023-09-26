@@ -5,20 +5,21 @@ import shutil
 def organize_files(src_folder, dest_folder):
     for root, dirs, files in os.walk(src_folder):
         for file in files:
-            file_name = os.path.splitext(file)[0]
-            folder_name = file_name[:4]  # Mengambil 4 huruf pertama dari nama file
-            file_extension = os.path.splitext(file)[1]
-            source_path = os.path.join(root, file)
-            dest_path = os.path.join(dest_folder, folder_name, file_name + file_extension)
+            folder_name = file[:4]  # Mengambil 4 huruf pertama dari nama file
+            file_name, file_extension = os.path.splitext(file)
+            folder_path = os.path.join(dest_folder, root, folder_name)
 
             # Membuat folder jika belum ada
-            os.makedirs(os.path.join(dest_folder, folder_name), exist_ok=True)
+            os.makedirs(folder_path, exist_ok=True)
+
+            source_path = os.path.join(root, file)
+            dest_path = os.path.join(folder_path, file_name + file_extension)
 
             # Memindahkan file ke folder yang sesuai
             shutil.move(source_path, dest_path)
 
 if __name__ == "__main__":
-    src_folder = "percob"
-    dest_folder = "percob_output"
+    src_folder = r"D:\3 projekTA\TA koding\Dataset\jantung\data isys doppler\percobin"
+    dest_folder = r"D:\3 projekTA\TA koding\Dataset\jantung\data isys doppler\percob_output"
 
     organize_files(src_folder, dest_folder)
