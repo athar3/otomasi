@@ -7,3 +7,6 @@
   - [x] apusnojson
   - [x] 1gabungdoppnodopp
   - [x] 2gabungdoppnodopp
+
+
+sumpah file 2gabungdoppnodopp nih beda dri yg diharapkan, tetapi pas di ekspektasi. ga tao dimana salah tpi ini bener
